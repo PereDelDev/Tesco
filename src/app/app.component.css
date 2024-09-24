@@ -1,0 +1,10 @@
+app-nav-bar {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+div {
+    height: 120px;
+    width: 100%;
+}
