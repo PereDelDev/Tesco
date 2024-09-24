@@ -104,6 +104,16 @@ form {
         padding: 3px;
         border-radius: 5px;
 
+        &.button {
+            width: auto;
+            color: white;
+            background-color: #a02a20;
+            border: none;
+            margin-top: 20px;
+            font-weight: bold;
+            padding: 2px 10px;
+            font-size: 12px;
+        }
     }
 
     & .textBox {

@@ -8,30 +8,40 @@
             <p>For employment inquiries, please visit our <a href="/careers"><strong>Careers Page</strong></a>.</p>
         </div>
         <div>
-            <form action="">
+            <form [formGroup]="Formulario" (ngSubmit)="onSubmit()">
                 <label for="">Name <strong>*</strong></label>
-                <input type="text">
+                <input formControlName="name" type="text">
                 <label for="">Company Name <strong>*</strong></label>
-                <input type="text">
+                <input formControlName="company" type="text">
                 <label for="">Email Address <strong>*</strong></label>
-                <input type="text">
+                <input formControlName="email" type="text">
                 <label for="">Phone Number <strong>*</strong></label>
-                <input type="text">
+                <input formControlName="phone" type="text">
                 <label for="">Industry (Energy, Oil & Gas, Manufacturing, etc.) <strong>*</strong></label>
-                <input type="text">
+                <input formControlName="industry" type="text">
                 <label for="">Service/Product of Interest <strong>*</strong></label>
-                <select name="" id="">
+                <select formControlName="service" name="" id="">
                     <option value="" hidden selected value></option>
-                    <option value="">hola</option>
-                    <option value="">adios</option>
-                    <option value="">Estamos</option>
-                    <option value="">Aqui</option>
-                    <option value="">Gracias amigo</option>
+                    <option value="Fabrication and Welding">Fabrication and Welding</option>
+                    <option value="Machining">Machining</option>
+                    <option value="High-pressure Water Jet">High-pressure Water Jet</option>
+                    <option value="On-site Services">On-site Services</option>
+                    <option value="Wellhead Installation">Wellhead Installation
+                    </option>
+                    <option value="Jars and Shock Tools">Jars and Shock Tools</option>
+                    <option value="Fishing & Re-entry Tols">Fishing & Re-entry Tols</option>
+                    <option value="Geothermal Wellhead Replacement">Geothermal Wellhead Replacement</option>
+                    <option value="Product Representation">Product Representation</option>
+                    <option value="Equipment Rental">Equipment Rental</option>
+                    <option value="Property Rental">Property Rental</option>
+                    <option value="Other Services">Other Services</option>
                 </select>
                 <label for="">Project Details/Inquiry <strong>*</strong></label>
-                <textarea name="" class="textBox" style="resize: none;" id=""></textarea>
+                <textarea formControlName="details" name="" class="textBox" style="resize: none;" id=""></textarea>
                 <label for="">Preferred Contact Method (Email, Phone, or either) <strong>*</strong></label>
-                <input type="text">
+                <input formControlName="contact" type="text">
+
+                <input class="button" type="submit" value="Submit">
             </form>
         </div>
     </article>
@@ -47,7 +57,7 @@
             </div>
             <div>
                 <fa-icon [icon]="faPhone"></fa-icon>
-                <p><strong>Phone No.</strong> <u>+632 8 584-4598</u> | <u>+632 8 552-5280</u> | <u>+63 917-810-8632</u>
+                <p><strong>Phone No. </strong> <u>+632 8 584-4598</u> | <u>+632 8 552-5280</u> | <u>+63 917-810-8632</u>
                 </p>
             </div>
             <div>
