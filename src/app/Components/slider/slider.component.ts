@@ -33,12 +33,12 @@ export class SliderComponent implements OnInit {
   }
 
   moveLeft() {
-    this.currentTranslate += 200;
+    this.currentTranslate += 210;
     this.carouselTrack.nativeElement.style.transform = `translateX(${this.currentTranslate}px)`;
   }
 
   moveRight() {
-    this.currentTranslate -= 200
+    this.currentTranslate -= 210
     this.carouselTrack.nativeElement.style.transform = `translateX(${this.currentTranslate}px)`
   }
 
