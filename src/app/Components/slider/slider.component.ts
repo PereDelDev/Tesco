@@ -17,7 +17,7 @@ export class SliderComponent implements OnInit {
 
 
 
-  @ViewChild('carouselTrack', { static: false }) carouselTrack!: ElementRef<HTMLDivElement>; // Usamos el nuevo { static: false }
+  @ViewChild('carouselTrack', { static: false }) carouselTrack!: ElementRef<HTMLDivElement>;
 
   isDragging = false;
   private startPosition = 0;
@@ -28,9 +28,7 @@ export class SliderComponent implements OnInit {
   isActive = true
 
   ngOnInit() {
-    // Iniciamos el loop del carrusel
-    this.index = Math.floor(this.arrCompanies.length / 2); // Empieza en el centro
-
+    this.index = Math.floor(this.arrCompanies.length / 2);
     this.loop();
   }
 
@@ -95,20 +93,11 @@ export class SliderComponent implements OnInit {
   setPositionByIndex() {
     const width = this.carouselTrack.nativeElement.offsetWidth / this.arrCompanies.length;
 
-    // Calcular el nuevo índice basado en la distancia total movida
-    this.index = Math.round(this.currentTranslate / -width); // Redondear para la imagen más cercana
-
-    // Asegurarse de que el índice no se salga de los límites
-    /*  this.index = Math.max(0, Math.min(this.index, this.arrCompanies.length - 1)); */
-
-    // Calcular la nueva posición de "currentTranslate" basada en el índice ajustado
+    this.index = Math.round(this.currentTranslate / -width); // 
     this.currentTranslate = this.index * -width;
-
-    // Aplicar la transición de forma suave
     this.carouselTrack.nativeElement.style.transition = 'transform 0.5s ease';
     this.carouselTrack.nativeElement.style.transform = `translateX(${this.currentTranslate}px)`;
 
-    // Eliminar la transición después de la animación para permitir el arrastre sin retraso
     setTimeout(() => {
       this.carouselTrack.nativeElement.style.transition = '';
     }, 500);
@@ -121,7 +110,7 @@ export class SliderComponent implements OnInit {
       this.setPositionByIndex();
 
       console.log(this.index)
-    }, 3000); // Cambia cada 3 segundos
+    }, 3000)
 
 
   }
