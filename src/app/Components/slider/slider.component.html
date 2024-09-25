@@ -1,15 +1,25 @@
 <div class="carousel-container" (mousedown)="onDragStart($event)" (mousemove)="onDrag($event)" (mouseup)="onDragEnd()"
     (mouseleave)="onDragEnd()">
+    <div (mousedown)="moveLeft()" class="left">
+        <p>
+            < </p>
+    </div>
     <div class="carousel-track" #carouselTrack>
-
-
-        @for ( image of images; track $index){
+        @for ( company of arrCompanies; track $index){
         <div class="carousel-slide">
-            <a [href]="image.link">
-                <img [src]="image.src" [alt]="image.alt">
+            @if (isActive){
+            <a [href]="company.foto">
+                <img [src]="company.foto">
             </a>
+            } @else {
+            <img [src]="company.foto" [>
+            }
 
         </div>
         }
+    </div>
+    <div (mousedown)="moveRight()" class="right">
+        <p>
+            > </p>
     </div>
 </div>
